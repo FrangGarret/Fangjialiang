@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<title>Welcome To My Home！</title>
+		<link href="../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/icons-extra.css" />
+		<style type="text/css">
+			/*禁止在ios中调整字体大小*/
+			
+			body {
+				-webkit-text-size-adjust: 100%!important;
+			}
+			
+			.title {
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+		</style>
+	</head>
+	<body>
+
+		<div class="scroll" style="position:absolute; overflow:scroll; -webkit-overflow-scrolling: touch; top:0; left:0; bottom:0; right:0;">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="../images/banner.jpg">
+							<p class="mui-slider-title">Boundless sea more fascinating</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/banner1.jpg">
+							<p class="mui-slider-title">The sun has risen, the dream began to set out!</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/banner2.jpg">
+							<p class="mui-slider-title">Just like you and you go to the old</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/banner3.jpg">
+							<p class="mui-slider-title">I'm still here, but where are you?</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/banner.jpg">
+							<p class="mui-slider-title">Boundless sea more fascinating</p>
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="../images/banner1.jpg">
+							<p class="mui-slider-title">The sun has risen, the dream began to set out!</p>
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator mui-text-right">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+			<!--底部导航-->
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item mui-active" href="#tabbar">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">Home</span>
+				</a>
+				<a class="mui-tab-item" href="#tabbar-with-contact">
+					<span class="mui-icon mui-icon-contact"></span>
+					<span class="mui-tab-label">Contacts</span>
+				</a>
+				<a class="mui-tab-item" href="#tabbar-with-map">
+					<span class="mui-icon mui-icon-gear"></span>
+					<span class="mui-tab-label">set</span>
+				</a>
+			</nav>
+			<div class="mui-content">
+				<div id="tabbar" class="mui-control-content mui-active">
+					<div class="title">
+						Wonderful case
+					</div>
+					<ul class="mui-table-view mui-table-view-chevron" id="list_new">
+						<!--<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="picture.html">
+								<img class="mui-media-object mui-pull-left" src="images/cbd.jpg">
+								<div class="mui-media-body">
+									Atlas (军旅时光)
+									<p class="mui-ellipsis">The cheers and laughter</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="media-list.html">
+								<img class="mui-media-object mui-pull-left" src="images/yuantiao.jpg">
+								<div class="mui-media-body">
+									Life ah (生活感言)
+									<p class="mui-ellipsis">Quietly look at this world, and finally crazy</p>
+								</div>
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media">
+							<a class="mui-navigate-right" href="Resume.html">
+								<img class="mui-media-object mui-pull-left" src="images/shuijiao.jpg">
+								<div class="mui-media-body">
+									Resume (个人简历)
+									<p class="mui-ellipsis">Where was the comrade in arms?</p>
+								</div>
+							</a>
+						</li>-->
+						
+					</ul>
+				</div>
+				<div id="tabbar-with-contact" class="mui-control-content">
+					<div id="Gallery" class="mui-slider">
+						<div class="mui-slider-group">
+							<div class="mui-slider-item">
+								<ul class="mui-table-view mui-grid-view mui-grid-9">
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="http://www.fangjialiang.com">
+											<span class="mui-icon mui-icon-home"></span>
+											<div class="mui-media-body">Home</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="sms:17701861952">
+											<span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+											<div class="mui-media-body">Message</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="erweima.html">
+											<span class="mui-icon mui-icon-chatbubble"></span>
+											<div class="mui-media-body">WChat</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="location.html">
+											<span class="mui-icon mui-icon-location"></span>
+											<div class="mui-media-body">location</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="project.html">
+											<span class="mui-icon mui-icon-search"></span>
+											<div class="mui-media-body">Case</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="tel:18175361553">
+											<span class="mui-icon mui-icon-phone"></span>
+											<div class="mui-media-body">Phone</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="yaoyiyao.html">
+											<span class="mui-icon-extra mui-icon-extra-sweep"></span>
+											<div class="mui-media-body">Yaoyiyao</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="zhifubao.html">
+											<span class="mui-icon-extra mui-icon-extra-alipay"></span>
+											<div class="mui-media-body">Alipay</div>
+										</a>
+									</li>
+									<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+										<a href="weibo.html">
+											<span class="mui-icon mui-icon-weibo"></span>
+											<div class="mui-media-body">weibo</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="tabbar-with-map" class="mui-control-content">
+					<div id="account" class="mui-page">
+						<div class="mui-page-content">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell">
+									<a id="head" class="mui-navigate-right" href="Resume.html">Resume
+										<span class="mui-pull-right head">
+											<img class="head-img mui-action-preview" id="head-img1" src=""/>
+											</span>
+									</a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a>Name<span class="mui-pull-right">方家亮</span></a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a>WeiChat<span class="mui-pull-right">fangjialianglai</span></a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a>QQ<span class="mui-pull-right">258351353</span></a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a>Phone<span class="mui-pull-right">18175361553</span></a>
+								</li>
+								<li class="mui-table-view-cell">
+									<a>Email<span class="mui-pull-right">18175361553@163.com</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<audio style="display:none; height: 0" id="Jaudio" class="media-audio" preload="auto" src="../music/chuzhen.mp3" loop="loop"></audio>
+	</body>
+
+</html>
+<script src="../js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+var snowmax=50
+// Set the colors for the snow. Add as many colors as you like
+var snowcolor=new Array("#FFDA65","#00AADD","#aaaacc","#ddddff","#ccccdd","#f3f3f3","#f0ffff","#bbf7f9")
+// Set the fonts, that create the snowflakes. Add as many fonts as you like
+var snowtype=new Array("Times","Arial","Times","Verdana")
+// Set the letter that creates your snowflake (recommended: * )
+var snowletter="*"
+// Set the speed of sinking (recommended values range from 0.3 to 2)
+var sinkspeed=0.6
+// Set the maximum-size of your snowflakes
+var snowmaxsize=30
+// Set the minimal-size of your snowflakes
+var snowminsize=8
+// Set the snowing-zone
+// Set 1 for all-over-snowing, set 2 for left-side-snowing
+// Set 3 for center-snowing, set 4 for right-side-snowing
+var snowingzone=1
+///////////////////////////////////////////////////////////////////////////
+var snow=new Array()
+var marginbottom
+var marginright
+var timer
+var i_snow=0
+var x_mv=new Array();
+var crds=new Array();
+var lftrght=new Array();
+var browserinfos=navigator.userAgent
+var ie5=document.all&&document.getElementById&&!browserinfos.match(/Opera/)
+var ns6=document.getElementById&&!document.all
+var opera=browserinfos.match(/Opera/)
+var browserok=ie5||ns6||opera
+
+function randommaker(range) {
+        rand=Math.floor(range*Math.random())
+    return rand
+}
+
+function initsnow() {
+        if (ie5 || opera) {
+                marginbottom = document.body.scrollHeight
+                marginright = document.body.clientWidth-15
+        }
+        else if (ns6) {
+                marginbottom = document.body.scrollHeight
+                marginright = window.innerWidth-15
+        }
+        var snowsizerange=snowmaxsize-snowminsize
+        for (i=0;i<=snowmax;i++) {
+                crds[i] = 0;
+            lftrght[i] = Math.random()*15;
+            x_mv[i] = 0.03 + Math.random()/10;
+                snow[i]=document.getElementById("s"+i)
+                snow[i].style.fontFamily=snowtype[randommaker(snowtype.length)]
+                snow[i].size=randommaker(snowsizerange)+snowminsize
+                snow[i].style.fontSize=snow[i].size+'px';
+                snow[i].style.color=snowcolor[randommaker(snowcolor.length)]
+                snow[i].style.zIndex=1000
+                snow[i].sink=sinkspeed*snow[i].size/5
+                if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+                if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+                if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+                if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+                snow[i].posy=randommaker(2*marginbottom-marginbottom-2*snow[i].size)
+                snow[i].style.left=snow[i].posx+'px';
+                snow[i].style.top=snow[i].posy+'px';
+        }
+        movesnow()
+}
+
+function movesnow() {
+        for (i=0;i<=snowmax;i++) {
+                crds[i] += x_mv[i];
+                snow[i].posy+=snow[i].sink
+                snow[i].style.left=snow[i].posx+lftrght[i]*Math.sin(crds[i])+'px';
+                snow[i].style.top=snow[i].posy+'px';
+
+                if (snow[i].posy>=marginbottom-2*snow[i].size || parseInt(snow[i].style.left)>(marginright-3*lftrght[i])){
+                        if (snowingzone==1) {snow[i].posx=randommaker(marginright-snow[i].size)}
+                        if (snowingzone==2) {snow[i].posx=randommaker(marginright/2-snow[i].size)}
+                        if (snowingzone==3) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/4}
+                        if (snowingzone==4) {snow[i].posx=randommaker(marginright/2-snow[i].size)+marginright/2}
+                        snow[i].posy=0
+                }
+        }
+        var timer=setTimeout("movesnow()",50)
+}
+
+for (i=0;i<=snowmax;i++) {
+        document.write("<span id='s"+i+"' style='position:absolute;top:-"+snowmaxsize+"'>"+snowletter+"</span>")
+}
+if (browserok) {
+        window.onload=initsnow
+}
+	function audioAutoPlay(id) {
+		var audio = document.getElementById(id),
+			play = function() {
+				audio.play();
+				document.removeEventListener("touchstart", play, false);
+			};
+		audio.play();
+		document.addEventListener("WeixinJSBridgeReady", function() {
+			play();
+		}, false);
+		document.addEventListener('YixinJSBridgeReady', function() {
+			play();
+		}, false);
+		document.addEventListener("touchstart", play, false);
+	}
+	audioAutoPlay('Jaudio');
+
+	//判断浏览器版本
+	mui.toast('为了更好的用户体验，请使用手机打开')
+	mui.init({
+		swipeBack: true //启用右滑关闭功能
+	});
+	var slider = mui("#slider");
+	slider.slider({
+		interval: 3000
+	});
+
+	var overscroll = function(el) {
+		el.addEventListener('touchstart', function() {
+			var top = el.scrollTop,
+				totalScroll = el.scrollHeight,
+				currentScroll = top + el.offsetHeight
+			if(top === 0) {
+				el.scrollTop = 1;
+			} else if(currentScroll === totalScroll) {
+				el.scrollTop = top - 1;
+			}
+		});
+		el.addEventListener('touchmove', function(evt) {
+			//if the content is actually scrollable, i.e. the content is long enough
+			//that scrolling can occur
+			if(el.offsetHeight < el.scrollHeight)
+				evt._isScroller = true
+		})
+	};
+	overscroll(document.querySelector('.scroll'));
+	document.body.addEventListener('touchmove', function(evt) {
+		//In this case, the default behavior is scrolling the body, which
+		//would result in an overflow.  Since we don't want that, we preventDefault.
+		if(!evt._isScroller) {
+			evt.preventDefault()
+		};
+		});
+
+		mui.ajax('../jsons/my_json.json', {
+			dataType: 'json', //服务器返回json格式数据
+			type: 'get', //HTTP请求类型
+			timeout: 10000, //超时时间设置为10秒；
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			success: function(data) {
+				var htmls='';
+				mui.each(data,function(index,item){
+				 	
+				 	htmls+='<li class="mui-table-view-cell mui-media">';
+					htmls+=		'<a class="mui-navigate-right" href="'+item.link_+'">';
+					htmls+=			'<img class="mui-media-object mui-pull-left" src=" '+item.img_src+' ">';
+					htmls+=			'<div class="mui-media-body">';
+					htmls+=				item.title;
+					htmls+=				'<p class="mui-ellipsis">'+item.little_title+'</p>';
+					htmls+=			'</div>';
+					htmls+=		'</a>'
+					htmls+=	'</li>';
+					return htmls;
+				})
+				
+				document.getElementById('list_new').innerHTML=htmls
+			},
+			error: function(xhr, type, errorThrown) {
+				//异常处理；
+				console.log(type);
+			}
+		});
+</script>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?6f1b4a5b45c7ec9d8f51efadbac382da";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>

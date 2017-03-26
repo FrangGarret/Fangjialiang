@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no" />
+		<meta content="email=no" name="format-detection" />
+		<title></title>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<style type="text/css">
+		html {
+			box-sizing: border-box;
+			font-family: 'Roboto', sans-serif;
+		}
+		
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			overflow: hidden;
+			background: #021d1c;
+		}
+		
+		.container {
+			height: 100%;
+			background-color: #131417;
+		}
+		
+		.box {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: end;
+			-webkit-justify-content: flex-end;
+			-ms-flex-pack: end;
+			justify-content: flex-end;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			width: 100%;
+			height: 100%;
+			/*background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke_texture2714-min.jpg") center center no-repeat;*/
+			background-size: cover;
+			box-shadow: 0 0 50px 0 rgba(75, 27, 27, 0.7);
+			z-index: 1;
+			overflow: hidden;
+		}
+		
+		.box__row-cell {
+			position: absolute;
+			top: 35%;
+			left: 50%;
+			width: 24%;
+			height: 29%;
+			background-color: rgba(192, 28, 28, 0.5);
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			-webkit-transition: all 400ms 600ms, width 300ms 300ms, background-color 300ms 600ms;
+			transition: all 400ms 600ms, width 300ms 300ms, background-color 300ms 600ms;
+			cursor: pointer;
+			overflow: hidden;
+			z-index: 2;
+		}
+		
+		.box__row-cell:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			-webkit-transition: 500ms;
+			transition: 500ms;
+		}
+		
+		.box__row-cell:before {
+			content: '';
+			position: absolute;
+			top: -5%;
+			left: -5%;
+			width: 110%;
+			height: 110%;
+			background-color: transparent;
+			opacity: 1;
+			-webkit-transition: 300ms;
+			transition: 300ms;
+			z-index: -3;
+		}
+		
+		.box__row-cell:hover:before {
+			background-color: #F25555;
+		}
+		
+		.box__row-cell-info {
+			margin-left: 20px;
+			width: 100px;
+			color: #fff;
+			-webkit-transition: 400ms 850ms;
+			transition: 400ms 850ms;
+		}
+		
+		.box__row-cell-info-ep {
+			margin-top: 25px;
+			font-size: 10px;
+		}
+		
+		.box__row-cell-info-ep span {
+			padding-left: 10px;
+		}
+		
+		@media screen and (max-height: 915px) {
+			.box__row-cell-info-ep {
+				margin-top: 10px;
+			}
+		}
+		
+		.box__row-cell-info-title {
+			letter-spacing: 2px;
+			margin-top: 15px;
+			font-size: 20px;
+		}
+		
+		@media screen and (max-height: 692px) {
+			.box__row-cell-info-title {
+				margin-top: 8px;
+				font-size: 18px;
+			}
+		}
+		
+		@media screen and (max-height: 692px) {
+			.box__row-cell-info-title {
+				font-size: 16px;
+				margin-top: 4px;
+			}
+		}
+		
+		.box__row-cell-info-sign {
+			margin: 15px 0 0 2px;
+			height: 3px;
+			width: 20px;
+			background-color: #fff;
+			border-radius: 1px;
+			-webkit-transition: 200ms;
+			transition: 200ms;
+			z-index: 10;
+		}
+		
+		@media screen and (max-height: 800px) {
+			.box__row-cell-info-sign {
+				margin-top: 10px;
+			}
+		}
+		
+		.box__row-cell-info--time {
+			position: absolute;
+			bottom: 18px;
+			font-size: 10px;
+		}
+		
+		@media screen and (max-height: 650px) {
+			.box__row-cell-info--time {
+				right: 20px;
+				text-align: right;
+			}
+		}
+		
+		.box__row-cell-info--full {
+			-webkit-transform: translateX(-50px);
+			transform: translateX(-50px);
+			opacity: 0;
+			/*margin: 50px 0 0 90px;*/
+			-webkit-transition: 300ms;
+			transition: 300ms;
+		}
+		
+		.box__row-cell-info--full-heading {
+			line-height: 60px;
+			color: #131313;
+			font-size: 30px;
+			font-weight: 900;
+		}
+		
+		.box__row-cell-info--full-par {
+			padding-top: 50px;
+			color: #fff;
+		}
+		
+		.box__row-cell:nth-child(2) {
+			left: 75%;
+		}
+		
+		.box__row-cell:nth-child(3) {
+			left: 100%;
+		}
+		
+		.box__row:nth-child(2) .box__row-cell {
+			top: 67.5%;
+		}
+		
+		.box__row:nth-child(3) .box__row-cell {
+			top: 100%;
+		}
+		
+		.box__content {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			background-color: #1C1E22;
+			-webkit-transform: translateZ(0);
+			transform: translateZ(0);
+			opacity: 0;
+			z-index: -10;
+			-webkit-transition: all 400ms 600ms, z-index 0ms 0ms;
+			transition: all 400ms 600ms, z-index 0ms 0ms;
+		}
+		
+		.box__content-wrapper {
+			position: relative;
+			margin-left: auto;
+			width: 50%;
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.box__content-inner {
+			position: absolute;
+			left: 0;
+			-webkit-transform: translateX(50px);
+			transform: translateX(50px);
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			opacity: 0;
+			-webkit-transition: 400ms, opacity 200ms;
+			transition: 400ms, opacity 200ms;
+		}
+		
+		.box__content-text {
+			padding: 20px 0 30px 8px;
+			width: 300px;
+			max-width: 100%;
+			color: #ababab;
+		}
+		
+		.box__content-text-heading {
+			position: relative;
+			margin: 50px 0 20px 0;
+			color: #f5f5f5;
+			font-size: 16px;
+		}
+		
+		.box__content-text-heading:after {
+			content: '';
+			position: absolute;
+			top: -15px;
+			left: 0;
+			width: 20px;
+			height: 2px;
+			background-color: #a73c3c;
+			box-shadow: 0 0 1px 0 #a73c3c;
+		}
+		
+		.box__content-text-par {
+			line-height: 22px;
+			padding-bottom: 10px;
+			font-size: 14px;
+		}
+		
+		.box__content-text-list {
+			list-style-type: none;
+		}
+		
+		.box__content-text-item {
+			padding-bottom: 3px;
+			font-size: 14px;
+		}
+		
+		.box__content-text-link {
+			text-decoration: none;
+			color: #ababab;
+			font-size: 14px;
+		}
+		
+		.box__content-text-link:hover {
+			text-decoration: underline;
+		}
+		
+		.box__close {
+			position: absolute;
+			top: 50px;
+			left: 100px;
+			height: 20px;
+			width: 20px;
+			font-size: 0;
+			cursor: pointer;
+			z-index: 9999;
+		}
+		
+		.box__close:after,
+		.box__close:before {
+			content: '';
+			position: absolute;
+			top: 9px;
+			left: -14px;
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+			width: 35px;
+			height: 2px;
+			background-color: #fff;
+			opacity: 0;
+			-webkit-transition: 500ms;
+			transition: 500ms;
+		}
+		
+		.box__close:before {
+			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+		}
+		
+		.box__close span {
+			position: relative;
+			display: inline-block;
+			margin: 1px;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: #fff;
+			-webkit-transition: 400ms 500ms;
+			transition: 400ms 500ms;
+		}
+		
+		.box__close span:nth-child(6) {
+			right: 6px;
+		}
+		
+		.box__close span:nth-child(7) {
+			right: 6px;
+		}
+		
+		.box__close span:nth-child(8) {
+			right: 6px;
+		}
+		
+		.box__close span:nth-child(9) {
+			right: 6px;
+		}
+		
+		.box__close span:nth-child(10) {
+			right: 6px;
+		}
+		
+		.box__episodes {
+			position: absolute;
+			top: 28%;
+			right: 15px;
+			color: #fff;
+			letter-spacing: 2px;
+			font-size: 10px;
+		}
+		
+		.box__episodes:after {
+			content: '';
+			position: absolute;
+			top: -20px;
+			right: 2px;
+			width: 15px;
+			height: 1px;
+			background-color: #fff;
+		}
+		
+		.box__smokebg {
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			-webkit-transform: translate3d(0, 0, 0) rotate(0.01deg);
+			transform: translate3d(0, 0, 0) rotate(0.01deg);
+			width: 120%;
+			height: 120%;
+			background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/smoke-min.png") center center no-repeat;
+			background-size: cover;
+			z-index: -10;
+			opacity: .5;
+			-webkit-animation: smokebg 60s infinite alternate;
+			animation: smokebg 60s infinite alternate;
+		}
+		
+		@-webkit-keyframes smokebg {
+			25% {
+				-webkit-transform: translate3d(100px, 0, 0) rotate(0.01deg);
+				transform: translate3d(100px, 0, 0) rotate(0.01deg);
+			}
+			50% {
+				-webkit-transform: translate3d(75px, -25px, 0) rotate(0.01deg);
+				transform: translate3d(75px, -25px, 0) rotate(0.01deg);
+			}
+			75% {
+				-webkit-transform: translate3d(45px, 30px, 0) rotate(0.01deg);
+				transform: translate3d(45px, 30px, 0) rotate(0.01deg);
+			}
+			100% {
+				-webkit-transform: translate3d(25px, -15px, 0) rotate(0.01deg);
+				transform: translate3d(25px, -15px, 0) rotate(0.01deg);
+			}
+		}
+		
+		@keyframes smokebg {
+			25% {
+				-webkit-transform: translate3d(100px, 0, 0) rotate(0.01deg);
+				transform: translate3d(100px, 0, 0) rotate(0.01deg);
+			}
+			50% {
+				-webkit-transform: translate3d(75px, -25px, 0) rotate(0.01deg);
+				transform: translate3d(75px, -25px, 0) rotate(0.01deg);
+			}
+			75% {
+				-webkit-transform: translate3d(45px, 30px, 0) rotate(0.01deg);
+				transform: translate3d(45px, 30px, 0) rotate(0.01deg);
+			}
+			100% {
+				-webkit-transform: translate3d(25px, -15px, 0) rotate(0.01deg);
+				transform: translate3d(25px, -15px, 0) rotate(0.01deg);
+			}
+		}
+		
+		.box__title {
+			position: absolute;
+			top: 25%;
+			left: 9%;
+		}
+		
+		.box__title-heading {
+			position: relative;
+			color: #7b2222;
+			letter-spacing: 3px;
+			line-height: 65px;
+			font-size: 65px;
+		}
+		
+		.box__title-heading:after {
+			content: '';
+			position: absolute;
+			top: 170px;
+			left: 0;
+			width: 20px;
+			height: 2px;
+			box-shadow: 0 0 1px 0 #000;
+			background-color: #000;
+		}
+		
+		.box__title-heading span {
+			letter-spacing: 6px;
+			color: #fff;
+		}
+		
+		.box__title-par {
+			text-transform: uppercase;
+			margin-top: 35%;
+			color: #7b2222;
+			font-size: 13px;
+			font-weight: bold;
+		}
+		
+		.active {
+			left: 0 !important;
+			top: 0 !important;
+			height: 100%;
+			width: 50%;
+			background-color: #F25555;
+			z-index: 5;
+			-webkit-transition: all 400ms 400ms, width 300ms 800ms;
+			transition: all 400ms 400ms, width 300ms 800ms;
+			cursor: default;
+			opacity: 1 !important;
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		
+		.active .box__row-cell-info:nth-child(1) {
+			-webkit-transform: translateX(50px);
+			transform: translateX(50px);
+			opacity: 0;
+			-webkit-transition: 300ms 0ms ease-in, opacity 375ms 0ms;
+			transition: 300ms 0ms ease-in, opacity 375ms 0ms;
+		}
+		
+		.active .box__row-cell-info:nth-child(2) {
+			-webkit-transform: translateX(50px);
+			transform: translateX(50px);
+			opacity: 0;
+			-webkit-transition: 300ms 50ms ease-in, opacity 375ms 50ms;
+			transition: 300ms 50ms ease-in, opacity 375ms 50ms;
+		}
+		
+		.active .box__row-cell-info:nth-child(3) {
+			-webkit-transform: translateX(50px);
+			transform: translateX(50px);
+			opacity: 0;
+			-webkit-transition: 300ms 100ms ease-in, opacity 375ms 100ms;
+			transition: 300ms 100ms ease-in, opacity 375ms 100ms;
+		}
+		
+		.active .box__row-cell-info:nth-child(4) {
+			-webkit-transform: translateX(50px);
+			transform: translateX(50px);
+			opacity: 0;
+			-webkit-transition: 300ms 150ms ease-in, opacity 375ms 150ms;
+			transition: 300ms 150ms ease-in, opacity 375ms 150ms;
+		}
+		
+		.active .box__row-cell-info--full {
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+			opacity: 1;
+			-webkit-transition: 300ms 900ms;
+			transition: 300ms 900ms;
+		}
+		
+		.cell-fade {
+			opacity: 0;
+			-webkit-transition: all 400ms 400ms, width 300ms 800ms, opacity 200ms 300ms;
+			transition: all 400ms 400ms, width 300ms 800ms, opacity 200ms 300ms;
+		}
+		
+		.hover-cell:after {
+			opacity: 1;
+		}
+		
+		.show-content {
+			opacity: 1;
+			z-index: 2;
+			-webkit-transition: all 300ms 400ms, z-index 0ms 0ms;
+			transition: all 300ms 400ms, z-index 0ms 0ms;
+		}
+		
+		.show-content .box__content-inner {
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+			opacity: 1;
+			-webkit-transition: 300ms 1100ms;
+			transition: 300ms 1100ms;
+		}
+		
+		.box-close-active:after,
+		.box-close-active:before {
+			opacity: 1;
+			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg);
+			-webkit-transition: 500ms 800ms;
+			transition: 500ms 800ms;
+		}
+		
+		.box-close-active:before {
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+		}
+		
+		.box-close-active span {
+			opacity: 0;
+			-webkit-transition: 0ms 800ms;
+			transition: 0ms 800ms;
+		}
+	</style>
+
+	<body>
+
+		<div class="iscroll">
+			<div class="container">
+				<div class="box">
+					<div class="box__row">
+						<div data-cell='1' class="box__row-cell">
+							<div class="box__row-cell-info">
+								<p class='box__row-cell-info-ep'>NO. <span>04</span></p>
+							</div>
+							<div class="box__row-cell-info">
+								<p class='box__row-cell-info-title'>工作</p>
+								<p class='box__row-cell-info-title'>经验</p>
+							</div>
+							<div class="box__row-cell-info">
+								<div class="box__row-cell-info-sign"></div>
+							</div>
+							<div class="box__row-cell-info box__row-cell-info--time">
+								<p>挖坑填坑......</p>
+							</div>
+							<div class="box__row-cell-info--full">
+								<h1 class="box__row-cell-info--full-heading">Some of the work experience has been accumulated</h1>
+								<p class="box__row-cell-info--full-par">
+									Not as a test!
+								</p>
+							</div>
+						</div>
+
+						<div data-cell='2' class="box__row-cell">
+							<div class="box__row-cell-info">
+								<p class=' box__row-cell-info-ep'>NO. <span>03</span></p>
+							</div>
+							<div class="box__row-cell-info">
+								<p class=' box__row-cell-info-title'>项目</p>
+								<p class=' box__row-cell-info-title'>经验</p>
+							</div>
+							<div class="box__row-cell-info">
+								<div class="box__row-cell-info-sign"></div>
+							</div>
+							<div class="box__row-cell-info box__row-cell-info--time">
+								<p>不多不少......</p>
+							</div>
+							<div class="box__row-cell-info--full">
+								<h1 class="box__row-cell-info--full-heading">Experienced eight projects</h1>
+								<p class="box__row-cell-info--full-par">
+									All kinds of helpless
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="box__row">
+						<div data-cell='3' class="box__row-cell">
+							<div class="box__row-cell-info">
+								<p class=' box__row-cell-info-ep'>NO. <span>02</span></p>
+							</div>
+							<div class="box__row-cell-info">
+								<p class=' box__row-cell-info-title'>自我</p>
+								<p class=' box__row-cell-info-title'>评价</p>
+							</div>
+							<div class="box__row-cell-info">
+								<div class="box__row-cell-info-sign"></div>
+							</div>
+							<div class="box__row-cell-info box__row-cell-info--time">
+								<p>你猜猜看......</p>
+							</div>
+							<div class="box__row-cell-info--full">
+								<h1 class="box__row-cell-info--full-heading">Interest is really very much.</h1>
+								<p class="box__row-cell-info--full-par">
+									Because the body has to give up
+								</p>
+							</div>
+						</div>
+
+						<div data-cell='4' class="box__row-cell">
+							<div class="box__row-cell-info">
+								<p class=' box__row-cell-info-ep'>NO. <span>01</span></p>
+							</div>
+							<div class="box__row-cell-info">
+								<p class=' box__row-cell-info-title'>自我</p>
+								<p class=' box__row-cell-info-title'>简介</p>
+							</div>
+							<div class="box__row-cell-info">
+								<div class="box__row-cell-info-sign"></div>
+							</div>
+							<div class="box__row-cell-info box__row-cell-info--time">
+								<p>曲折人生......</p>
+							</div>
+							<div class="box__row-cell-info--full">
+								<h1 class="box__row-cell-info--full-heading">Hey ! Everyone, My Name Is FangLiaLiang</h1>
+								<p class="box__row-cell-info--full-par">
+									So ,Call me Fangjialiang
+								</p>
+							</div>
+						</div>
+					</div>
+					<!--工作经验模块	开始-->
+					<div data-content='1' class="box__content">
+						<div class="box__content-wrapper">
+							<div class="box__content-inner">
+								<div class="box__content-text">
+									<h2 class='box__content-text-heading'>2016/8-至今	Web前端开发工程师|能源与保险交付部</h2>
+									<h3 class="title_miaoshu">工作描述</h3>
+									<p class='box__content-text-par'>
+										1、运用html+css+js+grunt+npm进行后台系统的构建与数据交互，处理复杂页面交互逻辑。
+									</p>
+									<p class='box__content-text-par'>
+										2、协助其他项目组对项目进行项目BUG处理以及提出合理可实施建议（混合APP、移动端H5、数据可视化等技术要点）。
+									</p>
+									<p class='box__content-text-par'>
+										3、建立前端自动化流程，节省开发时间，提升前端小组的开发效率。
+									</p>
+									<h2 class='box__content-text-heading'>2016/2-2016/8上海翼路信息科技有限公司保险产品开发/项目策划</h2>
+									<h3 class="title_miaoshu">工作描述</h3>
+									<p class='box__content-text-par'>
+										1、熟练运用H5、css3、js开发车险互助险的webAPP；根据项目需求进行微信JS-SDK接口的调用，利用淘宝rem布局方式，完美自适应多款手机及其他移动终端。
+									</p>
+									<p class='box__content-text-par'>
+										2、通过调用百度地图API、优酷视频实现功能的完善。
+									</p>
+									<p class='box__content-text-par'>
+										3、通过MUI的混合方式开发壹路互助WebApp，充分结合H5绚丽多彩的效果+原生的流畅度，使WebApp的视觉呈现效果达到最佳，同时兼容IOS、android。
+									</p>
+									<p class='box__content-text-par'>
+										4、运用ajax技术与后台PHP工程师进行数据交互展示。
+									</p>
+									<p class='box__content-text-par'>
+										5、运用Grunt工具实现前端工程化，提高开发效率，提高网站性能。
+									</p>
+
+									<h2 class='box__content-text-heading'>2015/8-2016/2  上海华腾软件系统有限公司</h2>
+									<h3 class="title_miaoshu">工作描述</h3>
+									<p class='box__content-text-par'>
+										1、编写JS、DIV+CSS代码，处理网页特效JS及用户体验设计；
+									</p>
+									<p class='box__content-text-par'>
+										2、负责太保商城开发工作，利用各种前端技术将设计转换成用户界面；
+									</p>
+									<p class='box__content-text-par'>
+										3、理解产品发展方向和用户体验的核心法则，实现前端技术应用的创新；
+									</p>
+									<p class='box__content-text-par'>
+										4、负责使用HTML5+CSS3制作webApp太保商城，熟练制作自适应和响应式页面；
+									</p>
+									<p class='box__content-text-par'>
+										5、负责太平洋保险产线、寿险项目内部系统界面开发以及公司外包订单前端代码部分。
+									</p>
+
+									<h2 class='box__content-text-heading'>2014/4-2015/7安庆市艺术装饰工程公司</h2>
+									<h3 class="title_miaoshu">工作描述</h3>
+									<p class='box__content-text-par'>
+										1、主要接手政府部门的官方网站的制作与优化，编写JS、DIV+CSS代码，兼容IE6、7、8、9、10、11、火狐、谷歌、遨游等主流浏览器；
+									</p>
+									<p class='box__content-text-par'>
+										2、兼职制作网站设计图；
+									</p>
+									<h2 class='box__content-text-heading'>FOLLOW</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--工作经验模块	结束-->
+					
+					<!--项目经验模块	开始-->
+					<div data-content='2' class="box__content">
+						<div class="box__content-wrapper">
+							<div class="box__content-inner">
+								<div class="box__content-text">
+									<h2 class='box__content-text-heading'>2016/8-至今 太平洋保险寿险、健康险系统</h2>
+									<h3 class="title_miaoshu">项目描述</h3>
+									<p class='box__content-text-par'>
+										Hbuilder eclipse(开发工具)
+									</p>
+									<p class='box__content-text-par'>
+										服务器操作系统：RH Linux AS5u8（64BIT） 、中间件： Weblogic10.3.6（64BIT） Apache2.2.29（64BIT）、 数据库：Oracle11.2.0.4 PSU2(64BIT)
+									</p>
+									<p class='box__content-text-par'>
+										Linux /A6U4/ 64bit、Weblogic10.3.6、共享50G Nas存储
+									</p>
+									<p class='box__content-text-par'>
+										担任寿险、健康险项目的前端开发工程师，负责对该项目的前端界面设计及开发、UI、js框架的设计与选用，同后端java开发协商前后端交互API文档
+									</p>
+									<p class='box__content-text-par'>
+										支持个险核保业务和风控要求，实现终端化、智能化、自动化，提升作业效率和精度;支持多维度、精细化的个险核保业务数据统计与分析，对销售决策和风控提供高效、精确的数据支持;采用主流的技术架构和先进的技术方案，提高系统的稳定性、准确性和运行效率，用户感受操作便捷、界面友好、响应迅捷。
+									</p>
+									<h2 class='box__content-text-heading'>2016/2-2016/4 壹壹保</h2>
+									<h3 class="title_miaoshu">项目描述</h3>
+									<p class='box__content-text-par'>
+										Hbuilder eclipse(开发工具)
+									</p>
+									<p class='box__content-text-par'>
+										OS(硬件环境)
+									</p>
+									<p class='box__content-text-par'>
+										jdk 1.6、tomcat 6.0(软件环境)
+									</p>
+									<p class='box__content-text-par'>
+										壹壹保是翼路公司旗下主要产品，为用户提供快捷、便利、高效的专业信息和服务。由原知名互联网公司产品总监与福建最大的专业保险代理公司前首席战略官共同创立。 壹壹保以车险比价为切入点，去掉车险中间环节的层层盘剥，利用互联网手段减少车险获客成本，给客户最低的价格和一站式的购买体验。
+									</p>
+									<h3 class="title_miaoshu">责任描述</h3>
+									<p class='box__content-text-par'>
+										www.oneonebao.com
+									</p>
+									<p class='box__content-text-par'>
+										手机访问：oneonebao.com
+									</p>
+									<p class='box__content-text-par'>
+										1、负责对页面的重构和维护，与产品经理、后台PHP工程师、UI设计师共同讨论技术实现方案；
+									</p>
+									<p class='box__content-text-par'>
+										2、正在开发兼容安卓和IOS系统的车险APP
+									</p>
+									<h2 class='box__content-text-heading'>2016/4-2016/8壹路互助</h2>
+									<h3 class="title_miaoshu">项目描述</h3>
+									<p class='box__content-text-par'>
+										Hbuilder eclipse(开发工具)
+									</p>
+									<p class='box__content-text-par'>
+										OS(硬件环境)
+									</p>
+									<p class='box__content-text-par'>
+										jdk 1.6、tomcat 6.0(软件环境)
+									</p>
+									<p class='box__content-text-par'>
+										test.yiluhuzhu.com
+									</p>
+									<h3 class="title_miaoshu">责任描述</h3>
+									<p class='box__content-text-par'>
+										1、以微信开发为基础的webApp，完美兼容IOS、android手机浏览器，体验良好，交互效果接近于原生APP。
+									</p>
+									<p class='box__content-text-par'>
+										2、通过ajax技术完成前后端数据交互、逻辑跳转
+									</p>
+
+									<h2 class='box__content-text-heading'>2015/8-2016/2太保商城生活广场</h2>
+									<h3 class="title_miaoshu">项目描述</h3>
+									<p class='box__content-text-par'>
+										eclipse sublime(开发工具)
+									</p>
+									<p class='box__content-text-par'>
+										windows 7(硬件环境)
+									</p>
+									<p class='box__content-text-par'>
+										jdk 1.6、tomcat 6.0(软件环境)
+									</p>
+									<p class='box__content-text-par'>
+										太生活是隶属于太平洋保险在线服务科技有限公司（中国太平洋保险集团旗下的子公司）的新一代B2C和O2O相结合的电子购物商城。其域名为www.601601.com，与太平洋保险A股代码（601601）一致，寓意着传统行业与新兴行业的强强联合，为广大消费者带来值得信赖的购物体验。太生活商品覆盖汽车养护、运动健康、日用百货和旅游票务等类别，为用户提供专业化、特色化、全方位的增值服务，满足消费者多层次、多元化的消费需求！
+									</p>
+									<h3 class="title_miaoshu">责任描述</h3>
+									<p class='box__content-text-par'>
+										1、负责太保商城PC端开发工作，利用各种前端技术将设计转换成用户界面；
+									</p>
+									<p class='box__content-text-par'>
+										2、负责mobile端开发，使用HTML5+CSS3制作webApp太保商城，熟练制作自适应和响应式页面；
+									</p>
+									<p class='box__content-text-par'>
+										3、负责太平洋保险产线、寿险项目内部系统界面开发以及公司外包订单前端代码部分。
+									</p>
+
+									<h2 class='box__content-text-heading'>2014/4-2015/7安庆市迎江区人民政府官网</h2>
+									<h3 class="title_miaoshu">项目描述</h3>
+									<p class='box__content-text-par'>
+										eclipse sublime(开发工具)
+									</p>
+									<p class='box__content-text-par'>
+										windows 7(硬件环境)
+									</p>
+									<p class='box__content-text-par'>
+										jdk 1.6、tomcat 6.0(软件环境)
+									</p>
+									<p class='box__content-text-par'>
+										太生活是隶属于太平洋保险在线服务科技有限公司（中国太平洋保险集团旗下的子公司）的新一代B2C和O2O相结合的电子购物商城。其域名为www.601601.com，与太平洋保险A股代码（601601）一致，寓意着传统行业与新兴行业的强强联合，为广大消费者带来值得信赖的购物体验。太生活商品覆盖汽车养护、运动健康、日用百货和旅游票务等类别，为用户提供专业化、特色化、全方位的增值服务，满足消费者多层次、多元化的消费需求！
+									</p>
+									<h3 class="title_miaoshu">责任描述</h3>
+									<p class='box__content-text-par'>
+										1、负责迎江区官网整体版式的设计与页面重构；
+									</p>
+									<p class='box__content-text-par'>
+										2、对各官网进行代码维护与BUG修复；
+									</p>
+									<p class='box__content-text-par'>
+										3、提高代码运行质量以及摒除冗余代码。
+									</p>
+
+									<h2 class='box__content-text-heading'>掌握技术</h2>
+									<ul class='box__content-text-list'>
+										<li class='box__content-text-item'>
+											Html、Html5
+										</li>
+										<li class='box__content-text-item'>
+											CSS3、scss
+										</li>
+										<li class='box__content-text-item'>
+											javascript、jquery
+										</li>
+										<li class='box__content-text-item'>
+											bootstrap、jquery moible、jquery Ui
+										</li>
+										<li class='box__content-text-item'>
+											mui、vue、grunt
+										</li>
+									</ul>
+									<h2 class='box__content-text-heading'>FOLLOW</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--项目经验模块	结束-->
+					
+  					<!--自我评价模块	开始-->
+					<div data-content='3' class="box__content">
+						<div class="box__content-wrapper">
+							<div class="box__content-inner">
+								<div class="box__content-text">
+									<h2 class='box__content-text-heading'>自我评价</h2>
+									<p class='box__content-text-par'>
+										1、精通Div+css、JavaScript、less、scss、JSON、Ajax等页面技术熟悉W3C网页标准，热爱原生js学习，两年多前端开发经验；熟悉使用常见JS开发框架，如：MUI/jQuery/bootstrap/juery moible;
+									</p>
+									<p class='box__content-text-par'>
+										2、使用echarts进行前端数据可视化，具有丰富的使用经验。
+									</p>
+									<p class='box__content-text-par'>
+										3、熟练使用前端构建工具webpack+gulp+npm构建项目前端自动化流程，与后端开发协商前后端交互API文档，做到前后端分离，提升工作效率。
+									</p>
+									<p class='box__content-text-par'>
+										4、有良好的代码习惯，要求结构清晰，命名规范，逻辑性强，代码冗余率低，有一定的用户需求分析能力；
+									</p>
+									<p class='box__content-text-par'>
+										5、webapp开发经验丰富，善于使用HTML5、css3进行响应式布局，熟练解决多终端多浏览器的兼容性问题，做到网页展示无限接近设计稿；
+									</p>
+									<p class='box__content-text-par'>
+										6、精通前端性能优化，精准打击影响网站加载性能问题。
+									</p>
+									<p class='box__content-text-par'>
+										7、熟练使用微信js-sdk进行微信端开发，现着手学习高性能框架vue。
+									</p>
+									<p class='box__content-text-par'>
+										8、退伍军人，具有良好的团队协作能力与相处能力，个人学习能力较强，空余时间建立了个人网站m.fangjialiang.com；
+									</p>
+									<h2 class='box__content-text-heading'>掌握技术</h2>
+									<ul class='box__content-text-list'>
+										<li class='box__content-text-item'>
+											XHTML、HTML5
+										</li>
+										<li class='box__content-text-item'>
+											CSS3、less
+										</li>
+										<li class='box__content-text-item'>
+											javascript、jquery
+										</li>
+										<li class='box__content-text-item'>
+											bootstrap、jquery moible、jquery Ui
+										</li>
+										<li class='box__content-text-item'>
+											mui、vue
+										</li>
+										<li class='box__content-text-item'>
+											webpack、gulp、grunt
+										</li>
+									</ul>
+									<h2 class='box__content-text-heading'>FOLLOW</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--自我评价模块	结束-->
+					
+					<!--自我简介模块	开始-->
+					<div data-content='4' class="box__content">
+						<div class="box__content-wrapper">
+							<div class="box__content-inner">
+								<div class="box__content-text">
+									<h2 class='box__content-text-heading'>学历</h2>
+									<p class='box__content-text-par'>
+										2008/09-2014/06 淮南师范学院 全日制本科
+									</p>
+									<h2 class='box__content-text-heading'>自我评价</h2>
+									<p class='box__content-text-par'>
+										本人性格热情开朗，待人友好，为人诚实谦虚。工作勤奋，认真负责，能吃苦耐劳，尽职尽责，有耐心。具有亲和力，平易近人，善于与人沟通。
+									</p>
+									<p class='box__content-text-par'>
+										上面说的你真的信？咳，我自己都不信，人嘛，谁还能没有点毛病的，个人觉得自己还保留了部队的一些传统，令行禁止，雷厉风行！但是有些时候缺乏冷静！尤其是在编程这行，面对翻来覆去修改的需求，真的能上天你信吗，自己性格活泼开朗，活跃团队氛围是一大必杀技，时间观念、纪律观念非常强!
+									</p>
+									<h2 class='box__content-text-heading'>继续评价</h2>
+									<p class='box__content-text-par'>
+										感觉自己的大学真的是荒废的不能再荒废了，没有好好学习，没有好好旅游，也没有好好规划，全用在好好玩了。同时也庆幸自己坚持去了部队，改头换面，重新做人！怎么写着写着感觉中文就是没有英文看上去逼格高呢......
+									</p>
+									<h2 class='box__content-text-heading'>所在意的</h2>
+									<ul class='box__content-text-list'>
+										<li class='box__content-text-item'>
+											有理想
+										</li>
+										<li class='box__content-text-item'>
+											为之付出努力
+										</li>
+										<li class='box__content-text-item'>
+											爱家庭
+										</li>
+										<li class='box__content-text-item'>
+											和所爱的人生活在一起
+										</li>
+										<li class='box__content-text-item'>
+											爱工作
+										</li>
+										<li class='box__content-text-item'>
+											实现人生的理想，如此循环往复！
+										</li>
+									</ul>
+
+									<h2 class='box__content-text-heading'>FOLLOW</h2>
+									<p class='box__content-text-par'>
+										所以空口无凭，建站为证！
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--自我简介模块结束-->
+					<div class="box__close">
+						<span></span><br>
+						<span></span><br />
+						<span></span><br>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="box__episodes">Please</div>
+					<div class='box__title'>
+						<h1 class='box__title-heading'>方家亮<br>
+        				<span>Hello world</span>
+					</h1>
+						<p class='box__title-par'>2016-11-06</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<audio style="display:none; height: 0" id="Jaudio" class="media-audio" preload="auto" src="music/Victory.mp3" loop="loop"></audio>
+
+</html>
+<!--<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>-->
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var animation = false,
+			animDur = 1000,
+			$row = $('.box__row'),
+			$cell = $('.box__row-cell'),
+			$content = $('.box__content'),
+			$closeBtn = $('.box__close');
+
+		var active = function() {
+			if(!animation) {
+				animation = true;
+				var cellData = $(this).data('cell');
+				var $content = $('.box__content[data-content=' + cellData + ']');
+
+				$cell.addClass('cell-fade');
+				$(this).addClass('active');
+				$content.addClass('show-content');
+				$closeBtn.addClass('box-close-active');
+			}
+
+			setTimeout(function() {
+				animation = false;
+			}, animDur);
+		}
+
+		var close = function() {
+			animation = true;
+			$cell.removeClass('active cell-fade');
+			$content.removeClass('show-content');
+			$(this).removeClass('box-close-active');
+
+			setTimeout(function() {
+				animation = false;
+			}, animDur);
+		}
+
+		$row.on('click', '.box__row-cell', active);
+		$closeBtn.on('click', close);
+		$cell.on({
+			mouseenter: function() {
+				$cell.addClass('hover-cell');
+				$(this).removeClass('hover-cell');
+			},
+			mouseleave: function() {
+				$cell.removeClass('hover-cell');
+			}
+		});
+	});
+
+
+
+	
+
+
+
+	function audioAutoPlay(id) {
+		var audio = document.getElementById(id),
+			play = function() {
+				audio.play();
+				document.removeEventListener("touchstart", play, false);
+			};
+		audio.play();
+		document.addEventListener("WeixinJSBridgeReady", function() {
+			play();
+		}, false);
+		document.addEventListener('YixinJSBridgeReady', function() {
+			play();
+		}, false);
+		document.addEventListener("touchstart", play, false);
+	}
+	audioAutoPlay('Jaudio');
+</script>

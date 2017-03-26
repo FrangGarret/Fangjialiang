@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				color: #fff;
+			}
+			body,html{
+				background: #021D1C;
+				padding: 10px;
+			}
+			img{
+				max-width: 100%;
+			}
+			h1{
+				text-align: center;
+			}
+			p{
+				line-height: 30px;
+				word-break: break-all;
+				color: #ccc;
+			}
+			.daytime{
+				margin-top: 20px;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>家书抵万金</h1>
+		<img src="../images/w2.jpg"/>
+		<h3>夜间无事，于是找找自己的东西，无意中，竟然发现了自己给家里写过的第一封书信，父亲母亲依旧珍藏至今。</h3>
+		<p>父亲篇：</p>
+		<p>上次打电话，妈妈狠狠的表扬了你，说你已经戒烟了，也很少打牌了，每天晚上还出去遛弯儿，有不舒服的时候也不会不在乎，也会及时去医院检查，特别注意身体。我问她，你为什么改变这么大，她说：多亏你临走前在火车站对他说的话，嘱咐他一定要少抽烟，每年都要去医院做几次身体检查，他感觉儿子很关心他.......“不等妈妈说完，我就扑哧笑了出来，其实妈妈没有发现，电话这边我早就泪流满面，爸，你什么时候变得让我的眼泪如此的猝不及防的流落，这比你说一句”我爱你“深沉的多。</p>
+		<img src="../images/w3.jpg"/>
+		<p>母亲篇：</p>
+		
+		<p>昨天听到一个战友打电话说：妈妈，包饺子要放酵母吗？”那一刻，我突然特别的想你，小到洗衣做饭，大到前途命运的每一次选择，碰到难题，一定会想到你 ，如果有一串号码拨出去，就拨向了琐碎的生活、安稳的幸福，那号码一定是你的，昨天，我向时光许了愿：妈妈是个美人，岁月你别伤害她，请讲脚步放慢些，再慢一些......时光答应我会慢慢的走。</p>
+		<p>全家篇：</p>
+		<p>爸爸妈妈姐姐，聚散离合，我感觉这一年来当兵最大的收获不是拿了优秀士兵，不是获得了嘉奖，而是家庭更加和谐，亲人间的亲情更加弥足珍贵。其实我觉得这人生就是一场戏，我们哪一个又不是其中的旗子呢，可是，我们一起来演一场“我爱你们”的戏好不好，这戏，要演一辈子，所以，我们都要演的投入些、再投入些，好不好？到离开世界的那一刻，我们就该谢幕了，我会对你们说：谢谢观看，来生不见。遇见你们，一世就够了。</p>
+		<audio style="display:none; height: 0" id="Jaudio" class="media-audio" preload="auto" src="../music/Victory.mp3" loop="loop"></audio>
+	</body>
+
+</html>
+<script type="text/javascript">
+	function audioAutoPlay(id){
+	var audio = document.getElementById(id),
+		play = function(){
+			audio.play();
+			document.removeEventListener("touchstart",play, false);
+		};
+	audio.play();
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function() {
+    	play();
+    }, false);
+    document.addEventListener("touchstart",play, false);
+}
+audioAutoPlay('Jaudio');
+</script>
