@@ -32,6 +32,8 @@
 			if(!devtools.open || devtools.orientation !== orientation) {
 				emitEvent(true, orientation);
 				window.location.href="sorry.html"
+			}else{
+				window.location.href="sorry.html"
 			}
 
 			devtools.open = true;
