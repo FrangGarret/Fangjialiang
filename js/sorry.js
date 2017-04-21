@@ -31,7 +31,7 @@
 			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
 			if(!devtools.open || devtools.orientation !== orientation) {
 				emitEvent(true, orientation);
-				console.log('开启了控制台1')
+				window.location.href="sorry.html"
 			}
 
 			devtools.open = true;
