@@ -2,21 +2,21 @@
 	{
 		"id":"1",
 		"title":"Atlas (军旅时光)",
-		"img_src":"http://m.fangjialiang.com/images/cbd.jpg",
+		"img_src":"http://www.fangjialiang.com/images/cbd.jpg",
 		"little_title":"The cheers and laughter！",
 		"link_":"picture.html"
 	},
 	{
 		"id":"2",
 		"title":"Life ah (生活感言)",
-		"img_src":"http://m.fangjialiang.com/images/yuantiao.jpg",
+		"img_src":"http://www.fangjialiang.com/images/yuantiao.jpg",
 		"little_title":"Quietly look at this world, and finally crazy！",
 		"link_":"media-list.html"
 	},
 	{
 		"id":"3",
 		"title":"Resume (个人简历)",
-		"img_src":"http://m.fangjialiang.com/images/shuijiao.jpg",
+		"img_src":"http://www.fangjialiang.com/images/shuijiao.jpg",
 		"little_title":"Where was the comrade in arms?",
 		"link_":"Resume.html"
 	}
