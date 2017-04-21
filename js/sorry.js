@@ -31,6 +31,7 @@
 			((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
 			if(!devtools.open || devtools.orientation !== orientation) {
 				emitEvent(true, orientation);
+				console.log('开启了控制台1')
 			}
 
 			devtools.open = true;
@@ -43,7 +44,7 @@
 			devtools.open = false;
 			devtools.orientation = null;
 		}
-	}, 500);
+	},10);
 
 	if(typeof module !== 'undefined' && module.exports) {
 		module.exports = devtools;
