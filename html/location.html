@@ -83,19 +83,19 @@
 //		enableHighAccuracy: true
 //	})
 //	var map = new BMap.Map('allmap');
-	var poi = new BMap.Point(121.41425, 31.17445);
+	var poi = new BMap.Point(121.41140,  31.18000);
 	map.centerAndZoom(poi, 16);
 	map.enableScrollWheelZoom();
 
 	var content = '<div style="margin:0;line-height:20px;padding:2px;">' +
-		'<img src="../images/cpic.png" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
-		'地址：上海市徐汇区田林路201号<br/>电话：17701861952<br/>简介：太平洋保险越界办公大楼' +
+		'<img src="../images/logoyin.png" alt="" style="float:right;zoom:1;overflow:hidden;width:100px;height:100px;margin-left:3px;"/>' +
+		'地址：上海市徐汇区桂箐路69号桂箐园29号楼三楼<br/>电话：17621074660<br/>中软国际' +
 		'</div>';
 
 	//创建检索信息窗口对象
 	var searchInfoWindow = null;
 	searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
-		title: "黄兴大楼", //标题
+		title: "中软国际", //标题
 		width: 300, //宽度
 		height: 105, //高度
 		panel: "panel", //检索结果面板
