@@ -48,6 +48,7 @@
 				line-height: 28px;
 			}
 		</style>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 		<script src="../js/sorry.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8kUxvYNxPaoyKXt33OUORXVh"></script>
 		<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
@@ -152,4 +153,13 @@
 		searchInfoWindow3.open(new BMap.Point(116.328852, 40.057031));
 	}
 	searchInfoWindow.open(marker)
+	
+	$.ajax({
+		type:"get",
+		url:"http://api.map.baidu.com/direction/v1?mode=driving&origin=清华大学&destination=北京大学&origin_region=北京&destination_region=北京&output=json&ak=8kUxvYNxPaoyKXt33OUORXVh",
+		async:true,
+		success:function(data){
+			console.log(data)
+		}
+	});
 </script>
